@@ -3,7 +3,7 @@
 	<head>
 		<title>
 			
-			@yield('title', 'Recipe App')
+			@yield('title', 'Fridge Buffet')
 
 		</title>
 
@@ -12,6 +12,7 @@
 
 	    <link rel="stylesheet" type="text/css" href="css/bootstrapUnited.css">
 	    <link rel="stylesheet" type="text/css" href="css/main.css">
+	    <link rel="shortcut icon" href="/favicon.ico" /> 
 
 		@yield('head')
 
@@ -27,15 +28,15 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="/">Name of App</a>
+		      <a class="navbar-brand" href="/">Fridge Buffet</a>
 		    </div>
 
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-					<li {{ (Request::is('home') ? 'class=active' : '') }}><a href="/">Main Recipe Thing</a></li>
-		            <li {{ (Request::is('home') ? 'class=active' : '') }}><a href="/">Random Recipe Generator</a></li>
-		            <li {{ (Request::is('home') ? 'class=active' : '') }}><a href="/">Recipe Share</a></li>
-		            <li {{ (Request::is('home') ? 'class=active' : '') }}><a href="/">Add/Remove</a></li>
+					<li {{ (Request::is('chow') ? 'class=active' : '') }}><a href="/chow">Chow</a></li>
+		            <li {{ (Request::is('smoothies') ? 'class=active' : '') }}><a href="/smoothies">Smoothies</a></li>
+		            <li {{ (Request::is('cocktails') ? 'class=active' : '') }}><a href="/cocktails">Cocktails</a></li>
+		            <li {{ (Request::is('share') ? 'class=active' : '') }}><a href="/share">Recipe Share</a></li>
 		        </li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
@@ -88,6 +89,22 @@
 	    	@yield('content')
 
 	    </section>
+
+	    <footer>
+        <div class="row">
+          <div class="col-lg-12">
+
+            <ul class="list-unstyled">
+              <li class="pull-right"><a href="#top">Back to top</a></li>
+              <li class="li-footer"><a href="http://beta.johnlincoln.me">beta.johnlincoln.me</a></li>
+              <li class="li-footer"><a href="https://github.com/jlincoln88/P4">github</a></li>
+            </ul>
+            <p>Made by John Lincoln - check out my <a href="http://beta.johnlincoln.me">DWA 15 Portfolo</a> for links to all of my projects.</p>
+
+          </div>
+        </div>
+
+      	</footer>
 
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

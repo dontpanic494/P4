@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('home.home');
 });
+
+Route::get('/chow', function () {
+    return view('chow.chow');
+});
+
+Route::get('/smoothies', function () {
+    return view('smoothies.smoothies');
+});
+
+Route::get('/cocktails', function () {
+    return view('cocktails.cocktails');
+});
+
+Route::get('/share', function () {
+    return view('share.share');
+});
