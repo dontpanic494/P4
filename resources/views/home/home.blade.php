@@ -1,9 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="alert alert-dismissible alert-danger">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  <strong>Oh snap!</strong> <a href="#" class="alert-link">There's nothing here yet...</a> come back in a bit.
+
+<div class="jumbotron">
+  <h1>Welcome to Fridge Buffet!</h1>
+  <p>This site is currently...like...super under constuction. But feel free to click around, I guess. You'll love it if empty pages are your thing.</p>
+  <p><a class="btn btn-primary btn-lg">Let's do it</a></p>
 </div>
 
 
