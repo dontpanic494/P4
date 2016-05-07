@@ -18,7 +18,7 @@ class UserRecipesTableSeeder extends Seeder
         	'recipe_name' => 'Classic Grilled Cheese',
         	'recipe_description' => 'A classic grilled cheese (duh)',
 
-        	]);
+    	]);
 
         DB::table('user_recipes')->insert([
 
@@ -27,7 +27,7 @@ class UserRecipesTableSeeder extends Seeder
         	'recipe_name' => 'Classic Tomato Soup',
         	'recipe_description' => 'A classic tomato soup (duh)',
 
-        	]);
+    	]);
 
         DB::table('user_recipes')->insert([
 
@@ -36,6 +36,6 @@ class UserRecipesTableSeeder extends Seeder
         	'recipe_name' => 'Classic Bread Bowl',
         	'recipe_description' => 'A classic bread bowl...for like, soup and stuff (duh)',
 
-        	]);
+    	]);
     }
 }
