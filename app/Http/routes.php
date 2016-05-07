@@ -31,6 +31,8 @@ Route::get('/share', function () {
     return view('share.share');
 });
 
+Route::get('/test', 'RecipeShareController@getTest');
+
 Route::get('/debug', function() {
 
     echo '<pre>';
