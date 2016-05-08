@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserInstructionsTable extends Migration
+class CreateRecipeIngredientTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,22 +12,22 @@ class CreateUserInstructionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_instructions', function (Blueprint $table){
+        Schema::create('recipe_ingredient', function(Blueprint $table){
 
-            #incrementing ID field
+            #incrementing ID
             $table->increments('id');
 
-            #created/updated timestamps
+            #created/updates timestamps
             $table->timestamps();
-            
-            #create FK fields
-            ##fk initialize
+
+            #Add fk fiends for the joins
+            ##initialize
             $table->integer('recipe_id')->unsigned();
+            $table->integer('ingredient_id')->unsigned();
+
             ##make fk
             $table->foreign('recipe_id')->references('id')->on('user_recipes');
-
-            #main data
-            $table->string('instruction_text');
+            $table->foreign('ingredient_id')->references('id')->on('user_ingredients');
 
         });
     }
@@ -39,6 +39,6 @@ class CreateUserInstructionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('user_instructions');
+        Schema::drop('recipe_ingredient');
     }
 }
