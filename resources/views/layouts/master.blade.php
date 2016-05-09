@@ -33,8 +33,8 @@
 
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-					<li {{ (Request::is('chow') ? 'class=active' : '') }}><a href="/chow">Chow</a></li>
 					<!--
+					<li {{ (Request::is('chow') ? 'class=active' : '') }}><a href="/chow">Chow</a></li>
 		            <li {{ (Request::is('smoothies') ? 'class=active' : '') }}><a href="/smoothies">Smoothies</a></li>
 		            <li {{ (Request::is('cocktails') ? 'class=active' : '') }}><a href="/cocktails">Cocktails</a></li>
 		            -->
