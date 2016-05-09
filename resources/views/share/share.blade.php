@@ -12,8 +12,15 @@
 	@foreach($recipes as $recipe)
 		<section class='recipe_block'>
 			<h3>{{ $recipe->recipe_name }}</h3>
+
 			<h4>{{ $recipe->recipe_description }}</h4>
+
+			<a href='/share/view/{{ $recipe->id }}'>
 			<img src=' {{ $recipe->recipe_image }}' class= 'img-responsive' alt= 'Image for {{ $recipe->recipe_name }}'>
+			</a>
+			
+			<a href='/share/view/{{ $recipe->id }}'>View recipe</a>
+
 		</section>
 	@endforeach
 </div>

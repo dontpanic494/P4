@@ -58,25 +58,6 @@ body{
     padding-right: 1em;
 }
 
-.chow-jumbo{
-    background-image: url("../images/chowTemp.jpg");
-    background-size: cover;
-}
-
-.smoothies-jumbo{
-    background-image: url("../images/smoothiesTemp.jpg");
-    background-size: cover;
-}
-
-.cocktails-jumbo{
-    background-image: url("../images/cocktailsTemp.jpg");
-    background-size: cover;
-}
-
-.share-jumbo{
-    background-image: url("../images/shareTemp.jpg");
-    background-size: cover;
-}
 .recipe_block{
     border:1px solid #ccc;
     margin-right:10px;
