@@ -15,9 +15,9 @@ class UserRecipe extends Model
 		$ingredients_for_this_recipe = [];
 
 		foreach($this->ingredients as $ingredient){
-			$ingredients_for_this_recipe[] = $ingredient->id;
+			$ingredients_for_this_recipe[] = $ingredient->ingredient_name;
 		}
-		
+
 		return $ingredients_for_this_recipe;
 	}
 }
