@@ -27,9 +27,11 @@ Route::get('/cocktails', function () {
     return view('cocktails.cocktails');
 });
 
-Route::get('/share', function () {
-    return view('share.share');
-});
+// Route::get('/share', function () {
+//     return view('share.share');
+// });
+
+Route::get('/share', 'RecipeShareController@getShare');
 
 Route::get('/test', 'RecipeShareController@getTest');
 

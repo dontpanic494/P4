@@ -15,5 +15,10 @@ class RecipeShareController extends Controller
 
 	}
 
-	//rest
+	public function getShare(){
+
+		$recipes = \App\UserRecipe::orderBy('id')->get();
+
+		return view('share.share')->with('recipes', $recipes);
+	}
 }

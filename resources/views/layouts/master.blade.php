@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>
@@ -34,8 +34,10 @@
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
 					<li {{ (Request::is('chow') ? 'class=active' : '') }}><a href="/chow">Chow</a></li>
+					<!--
 		            <li {{ (Request::is('smoothies') ? 'class=active' : '') }}><a href="/smoothies">Smoothies</a></li>
 		            <li {{ (Request::is('cocktails') ? 'class=active' : '') }}><a href="/cocktails">Cocktails</a></li>
+		            -->
 		            <li {{ (Request::is('share') ? 'class=active' : '') }}><a href="/share">Recipe Share</a></li>
 		        </li>
 		      </ul>
@@ -50,7 +52,7 @@
 									Login via
 									<div class="social-buttons">
 										<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
-										<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+										<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Google</a>
 									</div>
 		                            or
 									 <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">

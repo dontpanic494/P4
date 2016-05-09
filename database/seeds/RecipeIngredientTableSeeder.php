@@ -20,11 +20,12 @@ class RecipeIngredientTableSeeder extends Seeder
     	];
 
     	foreach ($recipes as $name => $ingredients) {
+
     		$recipe = \App\UserRecipe::where('recipe_name', 'LIKE', $name)->first();
-    		//echo $recipe;
+
     		foreach($ingredients as $ingredientId){
+    			
     			$ingredient = \App\UserIngredient::where('id', 'LIKE', $ingredientId)->first();
-    			//echo $ingredient;
     			$recipe->ingredients()->save($ingredient);
     		}
     	}

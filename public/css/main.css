@@ -36,11 +36,11 @@ body{
 }
 .btn-tw{
     color: #fff;
-    background-color:#55acee;
+    background-color:#E53935;
 }
 .btn-tw:hover{
     color: #fff;
-    background-color:#59b5fa;
+    background-color:#E57373;
 }
 @media(max-width:768px){
     #login-dp{
@@ -76,4 +76,14 @@ body{
 .share-jumbo{
     background-image: url("../images/shareTemp.jpg");
     background-size: cover;
+}
+.recipe_block{
+    border:1px solid #ccc;
+    margin-right:10px;
+    margin-bottom:10px;
+    float:left;
+    padding:10px;
+    height:400px;
+    width:25%;
+    min-width:250px;
 }
