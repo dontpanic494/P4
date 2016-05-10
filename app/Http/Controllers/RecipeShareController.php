@@ -29,22 +29,32 @@ class RecipeShareController extends Controller
 
 	public function postAdd(Request $request){
 
-		// $data = $request->only('recipe_name', 'recipe_description', 'recipe_image');
-		// $recipe = \App\UserRecipe::create($data);
-
-
-
 		$recipe = new \App\UserRecipe();
 
 		$recipe->recipe_name = $request->recipe_name;
 		$recipe->recipe_description = $request->recipe_description;
 		$recipe->recipe_image = $request->recipe_image;
-		$recipe->ingredients()->sync($request->ingredients);
-		$recipe->hasSteps()->sync($request->instructions);
 
 		$recipe->save();
 
-		\Session::flash('message','Your recipe was added');
+		foreach ($request->ingredients as $ingredient) {
+			$newIngredient = new \App\UserIngredient();
+			$newIngredient->ingredient_name = $ingredient;
+
+			$newIngredient->save();
+
+			$recipe->ingredients()->sync([$newIngredient->id]);
+		}
+
+		foreach ($request->instructions as $instruction) {
+			$newInstruction = new \App\UserInstruction();
+			$newInstruction->instruction_text = $instruction;
+			$newInstruction->recipe_id = $recipe->id;
+
+			$newInstruction->save();
+
+		}
+
 		return redirect('/share');
 
 
