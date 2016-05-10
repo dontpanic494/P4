@@ -24,11 +24,13 @@ class RecipeShareController extends Controller
 
 	public function getView($id){
 
-		$recipe = \App\UserRecipe::with('ingredients')->find($id);
+		$recipe = \App\UserRecipe::with('ingredients')->with('hasSteps')->find($id);
+		//$steps = \App\UserRecipe::with('hasSteps')->find($id);
 
 		$ingredients_for_this_recipe = $recipe->getIngredients();
+		$instructions_for_this_recipe = $recipe->getInstructions();
 
-		return view('share.view')->with('recipe', $recipe)->with('ingredients_for_this_recipe', $ingredients_for_this_recipe);
+		return view('share.view')->with('recipe', $recipe)->with('ingredients_for_this_recipe', $ingredients_for_this_recipe)->with('instructions_for_this_recipe',$instructions_for_this_recipe);
 
 	}
 }
