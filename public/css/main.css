@@ -68,3 +68,19 @@ body{
     width:25%;
     min-width:250px;
 }
+
+.padded{
+
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.padded-mini{
+
+    margin-top: .25em;
+    margin-bottom: .25em;
+}
+
+.inputfield{
+    width: 30em;
+}

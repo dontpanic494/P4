@@ -31,6 +31,10 @@ Route::get('/share/view', function () {
     return view('share.view');
 });
 
+Route::get('/share/add', function () {
+    return view('share.add');
+});
+
 // Route::get('/share', function () {
 //     return view('share.share');
 // });

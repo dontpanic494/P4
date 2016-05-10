@@ -8,12 +8,6 @@ use App\Http\Requests;
 
 class RecipeShareController extends Controller
 {
-	public function getTest(){
-
-	    $recipe = new \App\UserRecipe();
-	    echo $recipe->getTable();
-
-	}
 
 	public function getShare(){
 
@@ -25,7 +19,6 @@ class RecipeShareController extends Controller
 	public function getView($id){
 
 		$recipe = \App\UserRecipe::with('ingredients')->with('hasSteps')->find($id);
-		//$steps = \App\UserRecipe::with('hasSteps')->find($id);
 
 		$ingredients_for_this_recipe = $recipe->getIngredients();
 		$instructions_for_this_recipe = $recipe->getInstructions();
