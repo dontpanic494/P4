@@ -16,7 +16,7 @@
 			<h4>{{ $recipe->recipe_description }}</h4>
 
 			<a href='/share/view/{{ $recipe->id }}'>
-			<img src=' {{ $recipe->recipe_image }}' class= 'img-responsive' alt= 'Image for {{ $recipe->recipe_name }}'>
+			<img src=' {{ $recipe->recipe_image }}' class= 'img-responsive recipe_image' alt= 'Image for {{ $recipe->recipe_name }}'>
 			</a>
 			
 			<a href='/share/view/{{ $recipe->id }}'>View recipe</a>

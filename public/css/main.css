@@ -59,14 +59,20 @@ body{
 }
 
 .recipe_block{
-    border:1px solid #ccc;
-    margin-right:10px;
-    margin-bottom:10px;
+    border:.25em solid #ccc;
+    margin-right:2em;
+    margin-bottom:2em;
     float:left;
     padding:10px;
-    height:400px;
+    height:30em;
     width:25%;
-    min-width:250px;
+    width: 25em
+}
+
+.recipe_image{
+
+
+
 }
 
 .padded{
