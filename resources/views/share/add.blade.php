@@ -3,18 +3,18 @@
 @section('content')
 
 <div class='container row'>
-	<form role="form">
+	<form role="form" method="POST" action="/share/add">
 
 		{{ csrf_field() }}
 
 		<label>Recipe Name</label>
 		<div class='milti-field-wrapper'>
-			<input class='inputfield' type="text" name="name" placeholder="Recipe Name"></input>
+			<input class='inputfield' type="text" name="recipe_name" placeholder="Recipe Name"></input>
 		</div>
 		<br>
 		<label>Recipe Description</label>
 		<div class='multi-field-wrapper'>
-			<input class='inputfield' type="text" name="description" placeholder="Description"></input>
+			<input class='inputfield' type="text" name="recipe_description" placeholder="Description"></input>
 		</div>
 		<br>
 	  	<label>Ingredients</label>
@@ -39,10 +39,10 @@
 		</div>
 		<label>Image URL</label>
 		<div class='multi-field-wrapper'>
-			<input class='inputfield' type="text" name="image" placeholder="http://imagehostingsite.com/image"></input>
+			<input class='inputfield' type="text" name="recipe_image" placeholder="http://imagehostingsite.com/image"></input>
 		</div>
 		<br>
-		<button type="button" class="btn btn-primary">Add Recipe</button>
+		<button type="submit" class="btn btn-primary">Add Recipe</button>
 		<br>
 	</form>
 	<br>

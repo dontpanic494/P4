@@ -35,9 +35,7 @@ Route::get('/share/add', function () {
     return view('share.add');
 });
 
-// Route::get('/share', function () {
-//     return view('share.share');
-// });
+Route::post('/share/add', 'RecipeShareController@postAdd');
 
 Route::get('/share', 'RecipeShareController@getShare');
 
