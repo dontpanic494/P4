@@ -27,7 +27,10 @@ class RecipeShareController extends Controller
 		$ingredients_for_this_recipe = $recipe->getIngredients();
 		$instructions_for_this_recipe = $recipe->getInstructions();
 
-		return view('share.view')->with('recipe', $recipe)->with('ingredients_for_this_recipe', $ingredients_for_this_recipe)->with('instructions_for_this_recipe',$instructions_for_this_recipe);
+		return view('share.view')
+			->with('recipe', $recipe)
+			->with('ingredients_for_this_recipe', $ingredients_for_this_recipe)
+			->with('instructions_for_this_recipe',$instructions_for_this_recipe);
 
 	}
 
@@ -62,6 +65,71 @@ class RecipeShareController extends Controller
 
 		return redirect('/share');
 
+
+	}
+
+	public function getEdit($id = null){
+
+		if(is_null($id)){
+			return redirect('/share');
+		}
+
+		$recipe = \App\UserRecipe::with('ingredients')->with('hasSteps')->find($id);
+
+		$ingredients_for_this_recipe = $recipe->getIngredients();
+		$instructions_for_this_recipe = $recipe->getInstructions();
+		
+		return view('share.edit')
+			->with('recipe', $recipe)
+			->with('ingredients_for_this_recipe', $ingredients_for_this_recipe)
+			->with('instructions_for_this_recipe',$instructions_for_this_recipe);
+
+	}
+
+	public function postEdit(Request $request){
+
+		$recipe = \App\UserRecipe::with('ingredients')->with('hasSteps')->find($request->id);
+
+		$recipe->recipe_name = $request->recipe_name;
+		$recipe->recipe_description = $request->recipe_description;
+		$recipe->recipe_image = $request->recipe_image;
+
+		$recipe->save();
+
+		if($recipe->hasSteps()){
+
+			$recipe->hasSteps()->forceDelete();
+
+		}
+
+		if($recipe->ingredients()){
+
+			$recipe->ingredients()->detach();
+
+		}
+
+		foreach ($request->ingredients as $ingredient) {
+
+
+			$newIngredient = new \App\UserIngredient();
+			$newIngredient->ingredient_name = $ingredient;
+			$newIngredient->save();
+
+			$recipe->ingredients()->save($newIngredient);
+
+		}
+
+		foreach ($request->instructions as $instruction) {
+
+			$newInstruction = new \App\UserInstruction();
+			$newInstruction->instruction_text = $instruction;
+			$newInstruction->recipe_id = $recipe->id;
+
+			$newInstruction->save();
+
+		}
+
+		return redirect('/share/edit/'.$request->id);
 
 	}
 

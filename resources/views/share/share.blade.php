@@ -21,7 +21,7 @@
 			
 			<a href='/share/view/{{ $recipe->id }}'>View recipe</a>
 			<br>
-			<a href='/share/confirm-delete/{{ $recipe->id }}'>Delete recipe</a>
+			<a href='/share/edit/{{ $recipe->id }}'>Edit</a>
 
 		</section>
 	@endforeach

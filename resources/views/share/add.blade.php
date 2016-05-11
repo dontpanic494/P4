@@ -1,8 +1,15 @@
 @extends('layouts.master')
 
+@section('title')
+	Add Recipe
+@stop
+
 @section('content')
 
 <div class='container row'>
+
+	<h1>Add New Recipe</h1>
+
 	<form role="form" method="POST" action="/share/add">
 
 		{{ csrf_field() }}

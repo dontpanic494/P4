@@ -31,6 +31,10 @@ Route::get('/share', 'RecipeShareController@getShare');
 
 Route::get('/share/view/{id?}', 'RecipeShareController@getView');
 
+Route::get('/share/edit/{id?}', 'RecipeShareController@getEdit');
+Route::post('/share/edit/', 'RecipeShareController@postEdit');
+
+
 Route::get('/share/confirm-delete/{id?}', 'RecipeShareController@getConfirmDelete');
 Route::get('/share/delete/{id?}', 'RecipeShareController@getDelete');
 
