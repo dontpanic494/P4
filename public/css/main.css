@@ -59,19 +59,21 @@ body{
 }
 
 .recipe_block{
-    border:.10em solid #ccc;
+    border:.15em solid #ccc;
+    border-color: #E95420;
+    border-radius: 1em;
     margin-right:2em;
     margin-bottom:2em;
     float:left;
     padding:10px;
     height:30em;
-    width:25%;
     width: 25em
 }
 
 .recipe_image{
 
-
+    width:100%;
+    max-width:40em;
 
 }
 

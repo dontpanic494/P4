@@ -11,7 +11,7 @@
 	<h1>{{ $recipe->recipe_name }}</h1>
 	<h3>{{ $recipe->recipe_description }}</h3>
 	<div class='row container padded'>
-	<img src=' {{ $recipe->recipe_image }}' class= 'img-responsive' alt= 'Image for {{ $recipe->recipe_name }}'>
+	<img src=' {{ $recipe->recipe_image }}' class= 'img-responsive img-rounded recipe_image' alt= 'Image for {{ $recipe->recipe_name }}'>
 	</div>
 
 	<div class='list-group'>
@@ -30,8 +30,15 @@
 		</a>
 	</div>
 
-	<div>
-		<a href='/share/confirm-delete/{{ $recipe->id }}'>Delete recipe</a>
+	<div class="panel panel-danger">
+		<div class="panel-heading">
+			<h3 class="panel-title">Additional Options</h3>
+		</div>
+		<div class='panel-body'>
+			<a href='/share/confirm-delete/{{ $recipe->id }}'>Delete recipe</a>	
+			<br>
+			<a href='/share/edit/{{ $recipe->id }}'>Edit recipe</a>
+		</div>
 	</div>
 
 
@@ -46,5 +53,14 @@
   </a>
   <a href="#" class="list-group-item">Morbi leo risus
   </a>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel primary</h3>
+  </div>
+  <div class="panel-body">
+    Panel content
+  </div>
 </div>
 -->
