@@ -8,6 +8,8 @@
 
 @section('content')
 
+ <p>Not what you're looking for? <a href='/share'>Browse more recipes...</a></p>
+
 	<h1>{{ $recipe->recipe_name }}</h1>
 	<h3>{{ $recipe->recipe_description }}</h3>
 	<div class='row container padded'>
@@ -35,6 +37,8 @@
 			<h3 class="panel-title">Additional Options</h3>
 		</div>
 		<div class='panel-body'>
+			<a href='/share'>Browse more recipes</a>	
+			<br>
 			<a href='/share/confirm-delete/{{ $recipe->id }}'>Delete recipe</a>	
 			<br>
 			<a href='/share/edit/{{ $recipe->id }}'>Edit recipe</a>
@@ -43,24 +47,3 @@
 
 
 @stop
-
-<!--
-<div class="list-group">
-  <a href="#" class="list-group-item active">
-    Cras justo odio
-  </a>
-  <a href="#" class="list-group-item">Dapibus ac facilisis in
-  </a>
-  <a href="#" class="list-group-item">Morbi leo risus
-  </a>
-</div>
-
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Panel primary</h3>
-  </div>
-  <div class="panel-body">
-    Panel content
-  </div>
-</div>
--->

@@ -16,19 +16,19 @@
 
 		<label>Recipe Name</label>
 		<div class='milti-field-wrapper'>
-			<input class='inputfield' type="text" name="recipe_name" placeholder="Recipe Name"></input>
+			<input class='inputfield' type="text" name="recipe_name" placeholder="recipe Name"></input>
 		</div>
 		<br>
 		<label>Recipe Description</label>
 		<div class='multi-field-wrapper'>
-			<input class='inputfield' type="text" name="recipe_description" placeholder="Description"></input>
+			<input class='inputfield' type="text" name="recipe_description" placeholder="description"></input>
 		</div>
 		<br>
 	  	<label>Ingredients</label>
 	    <div class="multi-field-wrapper">
 	      <div class="multi-fields">
 	        <div class="multi-field">
-	          <input class='inputfield' type="text" name="ingredients[]" placeholder="Ingredient">
+	          <input class='inputfield' type="text" name="ingredients[]" placeholder="click 'Add Field' for more ingredients">
 	          <button type="button" class="remove-field btn btn-secondary btn-sm padded-mini">Remove</button>
 	        </div>
 	      </div>
@@ -38,7 +38,7 @@
 	    <div class="multi-field-wrapper">
 	      <div class="multi-fields">
 	        <div class="multi-field">
-	          <input class='inputfield' type="text" name="instructions[]" placeholder="Step">
+	          <input class='inputfield' type="text" name="instructions[]" placeholder="click 'Add Field' for more steps">
 	          <button type="button" class="remove-field btn btn-secondary btn-sm padded-mini">Remove</button>
 	        </div>
 	      </div>
