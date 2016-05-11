@@ -40,10 +40,11 @@ class RecipeShareController extends Controller
 		foreach ($request->ingredients as $ingredient) {
 			$newIngredient = new \App\UserIngredient();
 			$newIngredient->ingredient_name = $ingredient;
-
 			$newIngredient->save();
 
-			$recipe->ingredients()->sync([$newIngredient->id]);
+			//$recipe->ingredients()->sync([$newIngredient->id]);
+			$recipe->ingredients()->save($newIngredient);
+
 		}
 
 		foreach ($request->instructions as $instruction) {
