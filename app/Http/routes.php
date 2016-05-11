@@ -15,21 +15,11 @@ Route::get('/', function () {
     return view('home.home');
 });
 
-Route::get('/chow', function () {
-    return view('chow.chow');
-});
+Route::get('/share', 'RecipeShareController@getShare');
 
-Route::get('/smoothies', function () {
-    return view('smoothies.smoothies');
-});
-
-Route::get('/cocktails', function () {
-    return view('cocktails.cocktails');
-});
-
-Route::get('/share/view', function () {
-    return view('share.view');
-});
+// Route::get('/share/view', function () {
+//     return view('share.view');
+// });
 
 Route::get('/share/add', function () {
     return view('share.add');
@@ -41,8 +31,13 @@ Route::get('/share', 'RecipeShareController@getShare');
 
 Route::get('/share/view/{id?}', 'RecipeShareController@getView');
 
+Route::get('/share/confirm-delete/{id?}', 'RecipeShareController@getConfirmDelete');
+Route::get('/share/delete/{id?}', 'RecipeShareController@getDelete');
 
 
+
+
+##DEBUGGING ROUTES
 
 Route::get('/test', 'RecipeShareController@getTest');
 

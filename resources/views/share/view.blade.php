@@ -26,5 +26,9 @@
 		@endforeach
 	</div>
 
+	<div>
+		<a href='/share/confirm-delete/{{ $recipe->id }}'>Delete recipe</a>
+	</div>
+
 
 @stop

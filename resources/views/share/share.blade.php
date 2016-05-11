@@ -20,6 +20,8 @@
 			</a>
 			
 			<a href='/share/view/{{ $recipe->id }}'>View recipe</a>
+			<br>
+			<a href='/share/confirm-delete/{{ $recipe->id }}'>Delete recipe</a>
 
 		</section>
 	@endforeach

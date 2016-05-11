@@ -16,7 +16,11 @@ class RecipeShareController extends Controller
 		return view('share.share')->with('recipes', $recipes);
 	}
 
-	public function getView($id){
+	public function getView($id = null){
+
+		if(is_null($id)){
+			return redirect('/share');
+		}
 
 		$recipe = \App\UserRecipe::with('ingredients')->with('hasSteps')->find($id);
 
@@ -57,6 +61,46 @@ class RecipeShareController extends Controller
 		}
 
 		return redirect('/share');
+
+
+	}
+
+	public function getConfirmDelete($id = null){
+
+		if(is_null($id)){
+			return redirect('/share');
+		}
+
+		$recipe = \App\UserRecipe::with('ingredients')->with('hasSteps')->find($id);
+
+		return view('share.delete')->with('recipe', $recipe);
+
+	}
+
+	public function getDelete($id = null){
+
+		if(is_null($id)){
+			return redirect('/share');
+		}
+
+		$recipe = \App\UserRecipe::with('ingredients')->with('hasSteps')->find($id);
+
+
+		if($recipe->ingredients()){
+
+			$recipe->ingredients()->detach();
+
+		}
+
+		if($recipe->hasSteps()){
+
+			$recipe->hasSteps()->forceDelete();
+
+		}
+
+		$recipe->delete();
+
+		return redirect ('/share');
 
 
 	}
