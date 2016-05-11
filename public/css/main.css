@@ -59,7 +59,7 @@ body{
 }
 
 .recipe_block{
-    border:.25em solid #ccc;
+    border:.10em solid #ccc;
     margin-right:2em;
     margin-bottom:2em;
     float:left;
