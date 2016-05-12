@@ -12,17 +12,18 @@ class RecipeShareController extends Controller
 	public function getShare(){
 
 		$recipes = \App\UserRecipe::orderBy('id')->get();
-
 		return view('share.share')->with('recipes', $recipes);
+
 	}
 
 	public function getView($id = null){
 
-		if(is_null($id)){
+		$recipe = \App\UserRecipe::with('ingredients')->with('hasSteps')->find($id);
+
+		if(is_null($recipe)){
+			\Session::flash('message', 'Recipe not found.');
 			return redirect('/share');
 		}
-
-		$recipe = \App\UserRecipe::with('ingredients')->with('hasSteps')->find($id);
 
 		$ingredients_for_this_recipe = $recipe->getIngredients();
 		$instructions_for_this_recipe = $recipe->getInstructions();
@@ -70,12 +71,12 @@ class RecipeShareController extends Controller
 	}
 
 	public function getEdit($id = null){
+		
+		$recipe = \App\UserRecipe::with('ingredients')->with('hasSteps')->find($id);
 
 		if(is_null($id)){
 			return redirect('/share');
 		}
-
-		$recipe = \App\UserRecipe::with('ingredients')->with('hasSteps')->find($id);
 
 		$ingredients_for_this_recipe = $recipe->getIngredients();
 		$instructions_for_this_recipe = $recipe->getInstructions();
@@ -137,11 +138,11 @@ class RecipeShareController extends Controller
 
 	public function getConfirmDelete($id = null){
 
-		if(is_null($id)){
+		$recipe = \App\UserRecipe::with('ingredients')->with('hasSteps')->find($id);
+
+		if(is_null($recipe)){
 			return redirect('/share');
 		}
-
-		$recipe = \App\UserRecipe::with('ingredients')->with('hasSteps')->find($id);
 
 		return view('share.delete')->with('recipe', $recipe);
 
@@ -149,12 +150,17 @@ class RecipeShareController extends Controller
 
 	public function getDelete($id = null){
 
-		if(is_null($id)){
+		$recipe = \App\UserRecipe::with('ingredients')->with('hasSteps')->find($id);
+
+		if(is_null($recipe)){
+			\Session::flash('message', 'Recipe not found.');
 			return redirect('/share');
 		}
 
-		$recipe = \App\UserRecipe::with('ingredients')->with('hasSteps')->find($id);
-
+		if($id == 1){
+			\Session::flash('message', "DON'T DELETE THE GRILLED CHEESE YOU MONSTER!!!");
+			return redirect('/share');
+		}
 
 		if($recipe->ingredients()){
 
