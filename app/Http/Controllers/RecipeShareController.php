@@ -37,8 +37,19 @@ class RecipeShareController extends Controller
 
 	public function postAdd(Request $request){
 
-		$recipe = new \App\UserRecipe();
+		## Form Validation
 
+		$this->validate($request,[
+				'recipe_name' => 'required|min:3',
+				'recipe_description' => 'required|min:3',
+				'recipe_image' => 'required|url',
+				'ingredients.*' => 'required|min:1',
+				'instructions.*' => 'required|min:3',
+			]);	
+
+		##################
+
+		$recipe = new \App\UserRecipe();
 		$recipe->recipe_name = $request->recipe_name;
 		$recipe->recipe_description = $request->recipe_description;
 		$recipe->recipe_image = $request->recipe_image;
@@ -50,7 +61,6 @@ class RecipeShareController extends Controller
 			$newIngredient->ingredient_name = $ingredient;
 			$newIngredient->save();
 
-			//$recipe->ingredients()->sync([$newIngredient->id]);
 			$recipe->ingredients()->save($newIngredient);
 
 		}
@@ -89,6 +99,18 @@ class RecipeShareController extends Controller
 	}
 
 	public function postEdit(Request $request){
+
+		## Form Validation
+
+		$this->validate($request,[
+				'recipe_name' => 'required|min:3',
+				'recipe_description' => 'required|min:3',
+				'recipe_image' => 'required|url',
+				'ingredients.*' => 'required|min:1',
+				'instructions.*' => 'required|min:3',
+			]);	
+
+		##################
 
 		$recipe = \App\UserRecipe::with('ingredients')->with('hasSteps')->find($request->id);
 

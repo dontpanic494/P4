@@ -10,6 +10,14 @@
 	
 	<h1>Edit Recipe <i>{{ $recipe->recipe_name }}</i></h1>
 
+    @if(count($errors) > 0)
+        <ul class='errors'>
+            @foreach ($errors->all() as $error)
+                <li><span class='fa fa-exclamation-circle'></span> {{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
+
 	<form role="form" method="POST" action="/share/edit">
 
 		<input type='hidden' name='id' value='{{$recipe->id}}'>
