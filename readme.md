@@ -27,3 +27,6 @@ First off, implementation of the laravel/socialite package to allow people to lo
 There’s also a really interesting recipe API that I’d like to test with the ORIGINAL aim of this project -> users would input the ingredients they have in their fridge, and the app would output possible recipes (hence the name Fridge Buffet).
 
 All in all this was AWESOME, and I’ve very excited to continue to play with laravel over the summer!
+
+## DB Map
+</db_map.png>
