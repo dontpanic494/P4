@@ -7,7 +7,7 @@
 A recipe database created for and by users.
 
 ## Demo
-TBD
+<https://youtu.be/kNEtEgGKnYY>
 
 ## Details for teaching team
 Fridge Buffet allows users to do all sorts of CRUDy things with recipes. They can view existing recipes, add new recipes, edit recipes, and even delete recipes. Users must be logged in to perform any alterations to the database, however non-logged-in users are able to view the existing recipes.
