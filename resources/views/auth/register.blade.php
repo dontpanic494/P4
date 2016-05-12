@@ -17,28 +17,29 @@
     <form method='POST' action='/register'>
         {!! csrf_field() !!}
 
-        <div class='form-group'>
-            <label for='name'>Name</label>
+        <label for='name'>Name</label>
+        <div class='multi-field-wrapper'>
             <input type='text' name='name' id='name' value='{{ old('name') }}'>
         </div>
 
-        <div class='form-group'>
-            <label for='email'>Email</label>
+        <label for='email'>Email</label>
+        <div class='multi-field-wrapper'>
             <input type='text' name='email' id='email' value='{{ old('email') }}'>
         </div>
 
-        <div class='form-group'>
-            <label for='password'>Password</label>
+        <label for='password'>Password</label>
+        <div class='multi-field-wrapper'>
             <input type='password' name='password' id='password'>
         </div>
 
-        <div class='form-group'>
-            <label for='password_confirmation'>Confirm Password</label>
+        <label for='password_confirmation'>Confirm Password</label>
+        <div class='multi-field-wrapper'>
             <input type='password' name='password_confirmation' id='password_confirmation'>
         </div>
-
+    <br>
         <button type='submit' class='btn btn-primary'>Register</button>
-
+    <br>
+    <br>
     </form>
 
 @stop

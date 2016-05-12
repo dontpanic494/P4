@@ -77,6 +77,14 @@ body{
 
 }
 
+.recipe_thumb{
+
+    width:100%;
+    max-width:40em;
+    max-height: 20em;
+
+}
+
 .padded{
 
     margin-top: 1em;

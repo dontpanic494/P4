@@ -18,22 +18,22 @@
 
         {!! csrf_field() !!}
 
-        <div class='form-group'>
-            <label for='email'>Email</label>
+        <label for='email'>Email</label>
+        <div class='multi-field-wrapper'>
             <input type='text' name='email' id='email' value='{{ old('email') }}'>
         </div>
-
-        <div class='form-group'>
-            <label for='password'>Password</label>
+        
+        <label for='password'>Password</label>
+        <div class='multi-field-wrapper'>
             <input type='password' name='password' id='password' value='{{ old('password') }}'>
         </div>
 
-        <div class='form-group'>
+        <div class='multi-field-wrapper'>
             <input type='checkbox' name='remember' id='remember'>
             <label for='remember' class='checkboxLabel'>Remember me</label>
         </div>
-
         <button type='submit' class='btn btn-primary'>Login</button>
-
+        <br>
+        <br>
     </form>
 @stop

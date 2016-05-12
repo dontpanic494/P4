@@ -88,6 +88,11 @@ class RecipeShareController extends Controller
 			return redirect('/share');
 		}
 
+		if($id == 1){
+			\Session::flash('message', "DON'T CHANGE THE GRILLED CHEESE IT'S PERFECT THE WAY IT IS!!!");
+			return redirect('/share/view/1');
+		}
+
 		$ingredients_for_this_recipe = $recipe->getIngredients();
 		$instructions_for_this_recipe = $recipe->getInstructions();
 		
