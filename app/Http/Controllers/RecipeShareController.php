@@ -40,11 +40,11 @@ class RecipeShareController extends Controller
 		## Form Validation
 
 		$this->validate($request,[
-				'recipe_name' => 'required|min:3',
-				'recipe_description' => 'required|min:3',
+				'recipe_name' => 'required|min:3|max:50',
+				'recipe_description' => 'required|min:3|max:140',
 				'recipe_image' => 'required|url',
-				'ingredients.*' => 'required|min:1',
-				'instructions.*' => 'required|min:3',
+				'ingredients.*' => 'required|min:1|max:30',
+				'instructions.*' => 'required|min:3|max:140',
 			]);	
 
 		##################
@@ -103,11 +103,11 @@ class RecipeShareController extends Controller
 		## Form Validation
 
 		$this->validate($request,[
-				'recipe_name' => 'required|min:3',
-				'recipe_description' => 'required|min:3',
+				'recipe_name' => 'required|min:3|max:50',
+				'recipe_description' => 'required|min:3|max:140',
 				'recipe_image' => 'required|url',
-				'ingredients.*' => 'required|min:1',
-				'instructions.*' => 'required|min:3',
+				'ingredients.*' => 'required|min:1|max:30',
+				'instructions.*' => 'required|min:3|max:140',
 			]);	
 
 		##################
