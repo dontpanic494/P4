@@ -63,6 +63,7 @@ class RecipeShareController extends Controller
 
 		}
 
+		\Session::flash('message',$recipe->recipe_name.' has been added!');
 		return redirect('/share');
 
 
@@ -129,6 +130,7 @@ class RecipeShareController extends Controller
 
 		}
 
+		\Session::flash('message',$recipe->recipe_name.' has been updated.');
 		return redirect('/share/edit/'.$request->id);
 
 	}
@@ -168,6 +170,7 @@ class RecipeShareController extends Controller
 
 		$recipe->delete();
 
+		\Session::flash('message',$recipe->recipe_name.' was deleted.');
 		return redirect ('/share');
 
 

@@ -12,7 +12,7 @@
 */
 
 
-## AUTHENTICATION
+## AUTHENTICATION ##
 
 
 Route::get('/login', 'Auth\AuthController@getLogin');
@@ -23,8 +23,22 @@ Route::post('/register', 'Auth\AuthController@postRegister');
 
 Route::get('/logout', 'Auth\AuthController@logout');
 
-##############
+###############################################################
 
+## PROTECTED ROUTES ##
+
+// Route::group(['middleware' => 'auth'], function()){
+
+
+
+
+
+
+
+
+// }
+
+################################################################
 
 
 Route::get('/', function () {

@@ -31,18 +31,29 @@
 		      <a class="navbar-brand" href="/">Fridge Buffet</a>
 		    </div>
 
-		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		      <ul class="nav navbar-nav">
-		            <li {{ (Request::is('share') ? 'class=active' : '') }}><a href="/share">Recipe Share</a></li>
-		        </li>
-		      </ul>
-		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="/register">Sign Up!</a></li>
-		        <li><a href="/login">Log In!</a></li>
-		      </ul>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li {{ (Request::is('share') ? 'class=active' : '') }}><a href="/share">Recipe Share</a></li>
+				</ul>
+				@if(Auth::check())
+					<ul class="nav navbar-nav navbar-right">
+						<li><a>Welcome,  {{ Auth::user()->name }}!</a></li>
+						<li><a href="/logout">Log Out!</a></li>
+					</ul>
+				@else
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/register">Sign Up!</a></li>
+						<li><a href="/login">Log In!</a></li>
+					</ul>
+				@endif
 		    </div>
 		  </div>
 		</nav>
+
+	    @if(Session::get('message') != null)
+	        <div class='alert alert-danger'>{{ Session::get('message') }}</div>
+	    @endif
+
 		<section>
 
 	    	@yield('content')
