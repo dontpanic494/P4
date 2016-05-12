@@ -24,7 +24,7 @@
 
 		<label>Recipe Name</label>
 		<div class='milti-field-wrapper'>
-			<input class='inputfield' type="text" name="recipe_name" placeholder="recipe Name"></input>
+			<input class='inputfield' type="text" name="recipe_name" placeholder="recipe name"></input>
 		</div>
 		<br>
 		<label>Recipe Description</label>

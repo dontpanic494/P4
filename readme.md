@@ -29,4 +29,4 @@ There’s also a really interesting recipe API that I’d like to test with the 
 All in all this was AWESOME, and I’ve very excited to continue to play with laravel over the summer!
 
 ## DB Map
-<https://github.com/jlincoln88/P4/blob/master/DB_map.png>
+![alt tag](https://github.com/jlincoln88/P4/blob/master/DB_map.png)
