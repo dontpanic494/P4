@@ -25,6 +25,7 @@ Route::get('/logout', 'Auth\AuthController@logout');
 
 ###############################################################
 
+
 ## PROTECTED ROUTES ##
 
 Route::group(['middleware' => 'auth'], function() {
@@ -45,6 +46,7 @@ Route::group(['middleware' => 'auth'], function() {
 });
 
 ################################################################
+
 
 ## OPEN TO PUBLIC ROUTES ##
 

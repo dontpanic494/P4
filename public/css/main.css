@@ -100,3 +100,7 @@ body{
 .inputfield{
     width: 30em;
 }
+
+.errors{
+    padding: 1em;
+}
