@@ -56,8 +56,6 @@ Route::get('/', function () {
 
 Route::get('/share', 'RecipeShareController@getShare');
 
-Route::get('/share', 'RecipeShareController@getShare');
-
 Route::get('/share/view/{id?}', 'RecipeShareController@getView');
 
 #################################################################
